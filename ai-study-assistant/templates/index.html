@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 AI Study Assistant</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="pdf" required><br><br>
+
+            <input type="text" name="question" placeholder="Enter your question" required><br><br>
+
+            <select name="mode">
+                <option value="simple">Explain Simply</option>
+                <option value="2">Generate 2-Mark Answer</option>
+                <option value="16">Generate 16-Mark Answer</option>
+            </select><br><br>
+
+            <button type="submit">Generate Answer</button>
+        </form>
+
+        <div class="output">
+            <h3>Answer:</h3>
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+
+</body>
+</html>
